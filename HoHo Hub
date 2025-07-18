@@ -806,15 +806,12 @@ do
         if checking_key then return end
         checking_key = true
         key = key:gsub("[\r\n%z]", " "):gsub("[ \t]", ""):gsub("[ \n]", ""):gsub("[ \t]+%f[\r\n%z]", "")
-        local status = api.check_key(key);
 
         StarterGui:SetCore("SendNotification", {
             Title = "Key System",
-            Text = "[" .. status.code .. "] " .. status.message,
+            Text = "[KEY_VALID] " .. "blox fruits is really filled with exploiters bruh",
             Icon = "rbxassetid://16276677105"
         })
-
-        if (status.code == "KEY_VALID") then
             script_key = key;
             getfenv(0).script_key = key;
             getfenv(1).script_key = key;
@@ -824,12 +821,11 @@ do
             Debris:AddItem(HOHO_Passcheck, .25)
             Debris:AddItem(HOHO_Gen4, .25)
 
-            writefile("HohoKeyV4.txt", key)
+            --writefile("HohoKeyV4.txt", key)
 
             wait(.25)
 
             api.load_script()
-        end
         checking_key = false
     end
 
