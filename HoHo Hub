@@ -1,3 +1,4 @@
+print("haxed hoho hub")
 local GameId = game.GameId
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
